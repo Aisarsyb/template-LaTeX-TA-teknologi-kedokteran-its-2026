@@ -22,9 +22,11 @@
 \begin{large}
   \textmd{Dosen Pembimbing} \\
   \advisor{} \\
-  \textmd{NIP \advisornip{}} \\
-  \coadvisor{} \\
-  \textmd{NIP \coadvisornip{}}
+  \ifstrequal{\advisornip}{-}{}{\textmd{NIP \advisornip{}}\\}%
+  \ifstrequal{\coadvisor}{-}{}{%
+    \coadvisor{}%
+    \ifstrequal{\coadvisornip}{-}{}{\\\textmd{NIP \coadvisornip{}}}%
+  }
 \end{large}
 
 \vspace{\fill}

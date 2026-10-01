@@ -121,13 +121,23 @@
 % Isi keseluruhan dokumen
 \begin{document}
 
-% Sampul Proposal Bahasa Indonesia
+% Sampul luar Bahasa Indonesia
 \newcommand\covercontents{sampul/konten-id.tex}
 \input{sampul/sampul-luar.tex}
 \clearpage
 
 % Atur ulang penomoran halaman
 \setcounter{page}{1}
+
+% Sampul dalam Bahasa Indonesia (putih)
+\renewcommand\covercontents{sampul/konten-id.tex}
+\input{sampul/sampul-luar-tipis.tex}
+\clearpage
+
+% Sampul dalam Bahasa Inggris (putih)
+\renewcommand\covercontents{sampul/konten-en.tex}
+\input{sampul/sampul-luar-tipis.tex}
+\clearpage
 
 % Label tabel dan gambar dalam bahasa indonesia
 \renewcommand{\figurename}{Gambar}
