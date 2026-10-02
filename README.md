@@ -13,20 +13,26 @@ Template ini mencakup struktur inti Sempro: **Bab I (Pendahuluan)**, **Bab II (T
 
 ---
 
-## ✨ Fitur Khusus Template Ini
+## ✨ Kepatuhan Terhadap Pedoman Resmi ITS (SK Rektor No. 280/2022)
 
-1. **Preset Khusus Teknologi Kedokteran ITS**:
+1. **Preset Lengkap Departemen & Program Studi**:
    - Program Studi: `Teknologi Kedokteran`
+   - Departemen: `Teknologi Kedokteran`
    - Fakultas: `Kedokteran dan Kesehatan` (`FKK`)
    - Kode Mata Kuliah: `KT234801` (Proposal Tugas Akhir)
-2. **Format Judul Bab Satu Baris**:
-   - Judul bab dicetak tebal, simetris di tengah (*centered*), dan satu baris (contoh: **BAB III METODOLOGI**).
-3. **Format Caption Gambar Sesuai Standar ITS**:
-   - Nomor gambar dicetak tebal dengan pemisah titik tanpa titik dua (contoh: **Gambar 3.1.** Diagram Alir Penelitian).
-   - Jarak spasi (*vertical skip*) antara gambar dan keterangan caption telah dioptimasi rapat dan proporsional.
-4. **Manajemen Sitasi & Bibliografi Modern**:
-   - Menggunakan `biblatex` dengan backend `biber` dan format standar APA.
-5. **Dukungan Lingkungan Kerja Lengkap**:
+2. **Sampul Resmi Proposal Sempro (Lampiran 1)**:
+   - Menggunakan format dasar kertas putih dengan pita biru horizontal khas ITS 10 mm (`sampul-luar-tipis.tex`).
+   - Menyediakan opsi peralihan mudah jika ingin digunakan untuk *Buku Tugas Akhir Final Hardcover* (`sampul-luar.tex` / Lampiran 6).
+3. **Format Judul Bab Terstandar (Subbab 3.2.i)**:
+   - Judul bab dicetak tebal, simetris di tengah (*centered*), dengan nomor bab angka Romawi di baris pertama dan judul bab di baris berikutnya (dua baris terpisah sesuai pedoman).
+4. **Penomoran Halaman Presisi (Subbab 2.1 & 3.2.f)**:
+   - Nomor halaman Romawi kecil (`ii, iii, ...`) di kanan bawah dimulai dari Lembar Pengesahan (halaman sampul terhitung halaman `i` tanpa dicetak).
+   - Penomoran angka Arab (`1, 2, ...`) di kanan bawah dimulai dari Bab I Pendahuluan.
+5. **Format Caption Gambar & Tabel**:
+   - Penomoran dua bagian (**Gambar 3.1.** / **Tabel 3.1.**) dengan judul tabel di atas dan judul gambar di bawah.
+6. **Manajemen Sitasi & Bibliografi Standar APA Edisi ke-7**:
+   - Menggunakan `biblatex` dengan backend `biber` dan format resmi APA 7th edition (`style=apa`).
+7. **Dukungan Lingkungan Kerja Lengkap**:
    - Siap pakai di **Visual Studio Code** dengan ekstensi *LaTeX Workshop* (konfigurasi `.vscode/settings.json` sudah disediakan).
    - Mendukung kompilasi otomatis melalui **GitHub Actions** CI/CD (`.github/workflows/ci.yaml`).
    - Dapat diimpor langsung ke **Overleaf**.

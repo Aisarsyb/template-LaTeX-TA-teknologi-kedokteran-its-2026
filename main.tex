@@ -78,9 +78,9 @@
   \or December% 12
   \fi}
 
-% Pengaturan format judul bab
+% Pengaturan format judul bab (Sesuai Pedoman ITS Bab 3.2.i: Nomor bab dan Judul bab terpisah baris)
 \usepackage{titlesec}
-\titleformat{\chapter}[block]{\bfseries\Large\centering}{BAB \Roman{chapter}\ }{0ex}{}
+\titleformat{\chapter}[display]{\bfseries\Large\centering}{BAB \Roman{chapter}}{0.5ex}{}
 \titleformat{\section}{\bfseries\large}{\MakeUppercase{\thesection}}{1ex}{\vspace{1ex}}
 \titleformat{\subsection}{\bfseries\large}{\MakeUppercase{\thesubsection}}{1ex}{}
 \titleformat{\subsubsection}{\bfseries\large}{\MakeUppercase{\thesubsubsection}}{1ex}{}
@@ -121,23 +121,26 @@
 % Isi keseluruhan dokumen
 \begin{document}
 
-% Sampul luar Bahasa Indonesia
+% =========================================================================
+% HALAMAN SAMPUL PROPOSAL (Sesuai SK Rektor ITS No. 280/2022 Lampiran 1)
+% Untuk Proposal Tugas Akhir (Sempro), sampul menggunakan kertas putih dengan
+% pita biru horizontal 10 mm (sampul-luar-tipis.tex).
+%
+% (Catatan: Jika dokumen ini digunakan untuk Buku Laporan Tugas Akhir Final,
+% silakan ganti menjadi sampul-luar.tex berwarna biru penuh sesuai Lampiran 6).
+% =========================================================================
 \newcommand\covercontents{sampul/konten-id.tex}
-\input{sampul/sampul-luar.tex}
-\clearpage
-
-% Atur ulang penomoran halaman
-\setcounter{page}{1}
-
-% Sampul dalam Bahasa Indonesia (putih)
-\renewcommand\covercontents{sampul/konten-id.tex}
 \input{sampul/sampul-luar-tipis.tex}
 \clearpage
 
-% Sampul dalam Bahasa Inggris (putih)
-\renewcommand\covercontents{sampul/konten-en.tex}
-\input{sampul/sampul-luar-tipis.tex}
-\clearpage
+% =========================================================================
+% PENOMORAN HALAMAN BAGIAN AWAL (Sesuai Pedoman ITS Subbab 2.1 & 3.2.f)
+% Diberi nomor halaman angka Romawi kecil (i, ii, iii, dst.) di kanan bawah.
+% Halaman sampul dihitung sebagai halaman i (tidak dicetak), sehingga
+% Lembar Pengesahan dimulai dari halaman ii.
+% =========================================================================
+\pagenumbering{roman}
+\setcounter{page}{2}
 
 % Label tabel dan gambar dalam bahasa indonesia
 \renewcommand{\figurename}{Gambar}
@@ -165,14 +168,13 @@
 % Pengaturan ukuran spasi paragraf
 \setlength{\parskip}{1ex}
 
-% Lembar pengesahan
+% Lembar pengesahan Bahasa Indonesia (Lampiran 2)
 \input{lainnya/lembar-pengesahan.tex}
 \clearpage
+
+% Lembar pengesahan Bahasa Inggris (Approval Sheet - Lampiran 2)
 \input{lainnya/lembar-pengesahan-en.tex}
 \clearpage
-
-% Nomor halaman pembuka dimulai dari sini
-\pagenumbering{roman}
 
 % Abstrak Bahasa Indonesia
 \input{abstrak/abstrak-id.tex}
