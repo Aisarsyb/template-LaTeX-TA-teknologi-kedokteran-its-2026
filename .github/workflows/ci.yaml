@@ -12,13 +12,22 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4.2.0
 
-      - name: Compile document
+      - name: Compile Sempro
         uses: xu-cheng/latex-action@v3
         with:
-          root_file: main.tex
+          root_file: sempro.tex
 
-      - name: Rename document
-        run: mkdir dist && mv main.pdf dist/buku-ta.pdf
+      - name: Compile Buku TA
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: buku-ta.tex
+
+      - name: Prepare artifacts
+        run: |
+          mkdir -p dist
+          cp sempro.pdf dist/sempro.pdf
+          cp buku-ta.pdf dist/buku-ta.pdf
+          cp sempro.pdf dist/main.pdf
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1

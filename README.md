@@ -1,4 +1,4 @@
-# Template LaTeX Seminar Proposal (Sempro) — Teknologi Kedokteran ITS 2026
+# Template LaTeX Proposal & Buku Tugas Akhir — Teknologi Kedokteran ITS 2026
 
 [![GitHub repo](https://img.shields.io/badge/GitHub-Aisarsyb-181717.svg?logo=github)](https://github.com/Aisarsyb/template-Latex-sempro-teknologi-kedokteran-its-2026)
 [![LaTeX](https://img.shields.io/badge/LaTeX-pdflatex-008080.svg?logo=latex)](https://www.latex-project.org/)
@@ -7,9 +7,21 @@
 [![Fakultas](https://img.shields.io/badge/Fakultas-Kedokteran%20dan%20Kesehatan%20(FKK)-blue.svg)](https://www.its.ac.id/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-Template [LaTeX](https://www.latex-project.org/) resmi untuk penulisan **Seminar Proposal (Sempro) Tugas Akhir** yang telah dikonfigurasi khusus untuk mahasiswa **Departemen Teknologi Kedokteran**, **Fakultas Kedokteran dan Kesehatan (FKK)**, **Institut Teknologi Sepuluh Nopember (ITS) Surabaya** tahun 2026.
+Template [LaTeX](https://www.latex-project.org/) resmi dan komprehensif untuk penulisan **Proposal Seminar Proposal (Sempro)** maupun **Buku Tugas Akhir Lengkap (Semhas & Sidang Akhir)** yang telah dikonfigurasi khusus untuk mahasiswa **Departemen Teknologi Kedokteran**, **Fakultas Kedokteran dan Kesehatan (FKK)**, **Institut Teknologi Sepuluh Nopember (ITS) Surabaya** tahun 2026. Format mengacu pada pedoman tugas akhir ITS (*SK Rektor ITS No. 280 Tahun 2022*).
 
-Template ini mencakup struktur inti Sempro: **Bab I (Pendahuluan)**, **Bab II (Tinjauan Pustaka)**, **Bab III (Metodologi)**, serta **Daftar Pustaka** dan lembar administrasi resmi (Sampul & Lembar Pengesahan Proposal). Format mengacu pada pedoman tugas akhir ITS (*SK Rektor ITS No. 280 Tahun 2022*) dengan layout naskah terkini.
+---
+
+## 🎯 1 Repositori untuk Dua Kebutuhan (Dual-Mode)
+
+Repositori ini dirancang agar mahasiswa tidak perlu berganti tautan atau memindahkan naskah ketika beralih dari fase Sempro ke fase Tugas Akhir:
+
+| Tipe Dokumen | File Utama (*Master*) | Sampul | Cakupan Bab & Halaman |
+| :--- | :--- | :--- | :--- |
+| **Proposal Sempro** | [`sempro.tex`](./sempro.tex) *(atau `main.tex`)* | Kertas Putih Pita Biru 10 mm (Lampiran 1) | **Bab 1 s.d. Bab 3**, Daftar Pustaka |
+| **Buku Tugas Akhir** | [`buku-ta.tex`](./buku-ta.tex) | Hardcover Biru Tua ITS (Lampiran 6) + Sampul Dalam (Lampiran 7 & 8) | **Bab 1 s.d. Bab 5**, Kata Pengantar, Orisinalitas, Biodata Penulis |
+
+> [!TIP]
+> Semua variabel identitas diri (Nama, NRP, Pembimbing, Penguji, Judul) disimpan terpusat di [`pustaka/variables.tex`](./pustaka/variables.tex). Tulisan Bab 1–3 saat Sempro langsung terpakai otomatis di Buku Tugas Akhir tanpa perlu *copy-paste* ulang!
 
 ---
 
@@ -19,22 +31,22 @@ Template ini mencakup struktur inti Sempro: **Bab I (Pendahuluan)**, **Bab II (T
    - Program Studi: `Teknologi Kedokteran`
    - Departemen: `Teknologi Kedokteran`
    - Fakultas: `Kedokteran dan Kesehatan` (`FKK`)
-   - Kode Mata Kuliah: `KT234801` (Proposal Tugas Akhir)
-2. **Sampul Resmi Proposal Sempro (Lampiran 1)**:
-   - Menggunakan format dasar kertas putih dengan pita biru horizontal khas ITS 10 mm (`sampul-luar-tipis.tex`).
-   - Menyediakan opsi peralihan mudah jika ingin digunakan untuk *Buku Tugas Akhir Final Hardcover* (`sampul-luar.tex` / Lampiran 6).
-3. **Format Judul Bab Terstandar (Subbab 3.2.i)**:
-   - Judul bab dicetak tebal, simetris di tengah (*centered*), dengan nomor bab angka Romawi di baris pertama dan judul bab di baris berikutnya (dua baris terpisah sesuai pedoman).
+   - Kode Mata Kuliah: `KT234801` (Proposal) / `KT234802` (Tugas Akhir)
+2. **Sampul Resmi Terstandar**:
+   - Sempro: Format dasar kertas putih dengan pita biru horizontal khas ITS 10 mm (`sampul-luar-tipis.tex` / Lampiran 1).
+   - Buku TA: Hardcover biru tua ITS (`sampul-luar.tex` / Lampiran 6) dan sampul dalam (`sampul-dalam.tex` / Lampiran 7 & 8).
+3. **Format Judul Bab Sebaris**:
+   - Judul bab dicetak tebal, simetris di tengah (*centered*), sebaris dengan 1 spasi standar (`BAB I PENDAHULUAN`).
 4. **Penomoran Halaman Presisi (Subbab 2.1 & 3.2.f)**:
-   - Nomor halaman Romawi kecil (`ii, iii, ...`) di kanan bawah dimulai dari Lembar Pengesahan (halaman sampul terhitung halaman `i` tanpa dicetak).
-   - Penomoran angka Arab (`1, 2, ...`) di kanan bawah dimulai dari Bab I Pendahuluan.
+   - Nomor halaman Romawi kecil (`ii, iii, ...`) di kanan bawah untuk bagian awal.
+   - Penomoran angka Arab (`1, 2, ...`) di kanan bawah dimulai dari Bab I Pendahuluan sampai akhir naskah.
 5. **Format Caption Gambar & Tabel**:
    - Penomoran dua bagian (**Gambar 3.1.** / **Tabel 3.1.**) dengan judul tabel di atas dan judul gambar di bawah.
-6. **Manajemen Sitasi & Bibliografi Standar APA Edisi ke-7**:
+6. **Manajemen Sitasi Standar APA Edisi ke-7**:
    - Menggunakan `biblatex` dengan backend `biber` dan format resmi APA 7th edition (`style=apa`).
 7. **Dukungan Lingkungan Kerja Lengkap**:
-   - Siap pakai di **Visual Studio Code** dengan ekstensi *LaTeX Workshop* (konfigurasi `.vscode/settings.json` sudah disediakan).
-   - Mendukung kompilasi otomatis melalui **GitHub Actions** CI/CD (`.github/workflows/ci.yaml`).
+   - Siap pakai di **Visual Studio Code** dengan ekstensi *LaTeX Workshop*.
+   - Mendukung kompilasi otomatis melalui **GitHub Actions** CI/CD (`.github/workflows/ci.yaml`) yang mengompilasi kedua versi PDF sekaligus.
    - Dapat diimpor langsung ke **Overleaf**.
 
 ---
@@ -66,7 +78,9 @@ template-ta-teknologi-kedokteran-its/
 ├── sampul/                  # Halaman sampul luar & dalam
 ├── .gitignore               # Mengabaikan berkas build (*.aux, *.log, *.pdf, dll)
 ├── LICENSE                  # Lisensi MIT
-├── main.tex                 # Berkas utama dokumen LaTeX
+├── sempro.tex               # Berkas utama PROPOSAL SEMINAR PROPOSAL (Bab 1-3)
+├── buku-ta.tex              # Berkas utama BUKU TUGAS AKHIR LENGKAP (Bab 1-5)
+├── main.tex                 # Berkas default (kompatibel Overleaf / default viewer)
 └── README.md                # Dokumentasi petunjuk penggunaan
 ```
 

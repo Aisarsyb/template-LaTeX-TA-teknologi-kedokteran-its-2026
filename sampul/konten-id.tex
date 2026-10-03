@@ -1,5 +1,5 @@
 \begin{large}
-  PROPOSAL TUGAS AKHIR - \coursecode{}
+  \ifdefined\coverdoctypename\coverdoctypename\else\doctypename\fi{} - \coursecode{}
 \end{large}
 
 \vspace{\fill}
@@ -21,22 +21,21 @@
 
 \begin{large}
   \textmd{Dosen Pembimbing} \\
-  \advisor{} \\
+  \textbf{\advisor{}} \\
   \ifstrequal{\advisornip}{-}{}{\textmd{NIP \advisornip{}}\\}%
   \ifstrequal{\coadvisor}{-}{}{%
-    \coadvisor{}%
+    \ifdefined\coadvisorrole\textmd{\coadvisorrole{}}\else\textmd{Ko-pembimbing}\fi \\
+    \textbf{\coadvisor{}}%
     \ifstrequal{\coadvisornip}{-}{}{\\\textmd{NIP \coadvisornip{}}}%
   }
 \end{large}
 
 \vspace{\fill}
 
-Program Studi \studyprogram{} \\
-Departemen \department{} \\
-
-\mdseries
-
-Fakultas \faculty{} \\
-\MakeUppercase{Institut Teknologi Sepuluh Nopember} \\
-
-\place{} \\ \the\year{}
+\begin{large}
+  \textbf{Program Studi \studyprogram{}} \\
+  \textmd{Fakultas \faculty{}} \\
+  \textmd{Institut Teknologi Sepuluh Nopember} \\
+  \textmd{\place{}} \\
+  \textmd{\the\year{}}
+\end{large}

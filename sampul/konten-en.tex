@@ -1,5 +1,5 @@
 \begin{large}
-  FINAL PROJECT PROPOSAL - \coursecode{}
+  \ifdefined\engcoverdoctypename\engcoverdoctypename\else\engdoctypename\fi{} - \coursecode{}
 \end{large}
 
 \vspace{\fill}
@@ -21,22 +21,21 @@
 
 \begin{large}
   \textmd{Advisor} \\
-  \advisor{} \\
+  \textbf{\advisor{}} \\
   \ifstrequal{\advisornip}{-}{}{\textmd{NIP \advisornip{}}\\}%
   \ifstrequal{\coadvisor}{-}{}{%
-    \coadvisor{}%
+    \ifdefined\engcoadvisorrole\textmd{\engcoadvisorrole{}}\else\textmd{Co-Advisor}\fi \\
+    \textbf{\coadvisor{}}%
     \ifstrequal{\coadvisornip}{-}{}{\\\textmd{NIP \coadvisornip{}}}%
   }
 \end{large}
 
 \vspace{\fill}
 
-Study Program of \engstudyprogram{} \\
-Department of \engdepartment{} \\
-
-\mdseries
-
-Faculty of \engfaculty{} \\
-Institut Teknologi Sepuluh Nopember \\
-
-\place{} \\ \the\year{}
+\begin{large}
+  \textbf{Study Program \engstudyprogram{}} \\
+  \textmd{Faculty of \engfaculty{}} \\
+  \textmd{Institut Teknologi Sepuluh Nopember} \\
+  \textmd{\place{}} \\
+  \textmd{\the\year{}}
+\end{large}
