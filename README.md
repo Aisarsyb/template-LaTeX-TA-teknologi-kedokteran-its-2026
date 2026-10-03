@@ -51,8 +51,7 @@ template-ta-teknologi-kedokteran-its/
 ├── bab/                     # Berkas isi bab naskah
 │   ├── 1-pendahuluan.tex
 │   ├── 2-tinjauan-pustaka.tex
-│   ├── 3-desain-implementasi.tex  # Bab 3 lengkap beserta contoh gambar
-│   ├── 3-metodologi-template.tex  # Starter template kosong Bab 3
+│   ├── 3-metodologi.tex
 │   ├── 4-pengujian-analisis.tex
 │   └── 5-penutup.tex
 ├── gambar/                  # Berkas grafik, diagram, dan foto
