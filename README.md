@@ -1,6 +1,6 @@
 # Template LaTeX Proposal & Buku Tugas Akhir — Teknologi Kedokteran ITS 2026
 
-[![GitHub repo](https://img.shields.io/badge/GitHub-Aisarsyb-181717.svg?logo=github)](https://github.com/Aisarsyb/template-Latex-sempro-teknologi-kedokteran-its-2026)
+[![GitHub repo](https://img.shields.io/badge/GitHub-Aisarsyb-181717.svg?logo=github)](https://github.com/Aisarsyb/template-LaTeX-TA-teknologi-kedokteran-its-2026)
 [![LaTeX](https://img.shields.io/badge/LaTeX-pdflatex-008080.svg?logo=latex)](https://www.latex-project.org/)
 [![ITS](https://img.shields.io/badge/Institusi-ITS%20Surabaya-003366.svg)](https://www.its.ac.id/)
 [![Departemen](https://img.shields.io/badge/Departemen-Teknologi%20Kedokteran-crimson.svg)](https://www.its.ac.id/)
@@ -90,8 +90,8 @@ template-ta-teknologi-kedokteran-its/
 
 ### Langkah 1: Kloning Repositori
 ```bash
-git clone https://github.com/Aisarsyb/template-Latex-sempro-teknologi-kedokteran-its-2026.git
-cd template-Latex-sempro-teknologi-kedokteran-its-2026
+git clone https://github.com/Aisarsyb/template-LaTeX-TA-teknologi-kedokteran-its-2026.git
+cd template-LaTeX-TA-teknologi-kedokteran-its-2026
 ```
 
 ### Langkah 2: Sesuaikan Variabel Dokumen
