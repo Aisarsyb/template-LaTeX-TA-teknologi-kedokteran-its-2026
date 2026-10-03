@@ -78,9 +78,9 @@
   \or December% 12
   \fi}
 
-% Pengaturan format judul bab (Sesuai Pedoman ITS Bab 3.2.i: Nomor bab dan Judul bab terpisah baris)
+% Pengaturan format judul bab (sebaris: BAB I PENDAHULUAN)
 \usepackage{titlesec}
-\titleformat{\chapter}[display]{\bfseries\Large\centering}{BAB \Roman{chapter}}{0.5ex}{}
+\titleformat{\chapter}[block]{\bfseries\Large\centering}{BAB \Roman{chapter}\quad}{0pt}{}
 \titleformat{\section}{\bfseries\large}{\MakeUppercase{\thesection}}{1ex}{\vspace{1ex}}
 \titleformat{\subsection}{\bfseries\large}{\MakeUppercase{\thesubsection}}{1ex}{}
 \titleformat{\subsubsection}{\bfseries\large}{\MakeUppercase{\thesubsubsection}}{1ex}{}
