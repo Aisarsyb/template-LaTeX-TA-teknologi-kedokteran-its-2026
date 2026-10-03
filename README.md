@@ -15,10 +15,10 @@ Template [LaTeX](https://www.latex-project.org/) resmi dan komprehensif untuk pe
 
 Repositori ini dirancang agar mahasiswa tidak perlu berganti tautan atau memindahkan naskah ketika beralih dari fase Sempro ke fase Tugas Akhir:
 
-| Tipe Dokumen | File Utama (*Master*) | Sampul | Cakupan Bab & Halaman |
-| :--- | :--- | :--- | :--- |
-| **Proposal Sempro** | [`sempro.tex`](./sempro.tex) *(atau `main.tex`)* | Kertas Putih Pita Biru 10 mm (Lampiran 1) | **Bab 1 s.d. Bab 3**, Daftar Pustaka |
-| **Buku Tugas Akhir** | [`buku-ta.tex`](./buku-ta.tex) | Hardcover Biru Tua ITS (Lampiran 6) + Sampul Dalam (Lampiran 7 & 8) | **Bab 1 s.d. Bab 5**, Kata Pengantar, Orisinalitas, Biodata Penulis |
+| Tipe Dokumen | File Utama (*Master*) | Cakupan Bab & Halaman |
+| :--- | :--- | :--- |
+| **Proposal Sempro** | [`sempro.tex`](./sempro.tex) *(atau `main.tex`)* | **Bab 1 s.d. Bab 3**, Daftar Pustaka |
+| **Buku Tugas Akhir** | [`buku-ta.tex`](./buku-ta.tex) | **Bab 1 s.d. Bab 5**, Kata Pengantar, Orisinalitas, Biodata Penulis |
 
 > [!TIP]
 > Semua variabel identitas diri (Nama, NRP, Pembimbing, Penguji, Judul) disimpan terpusat di [`pustaka/variables.tex`](./pustaka/variables.tex). Tulisan Bab 1–3 saat Sempro langsung terpakai otomatis di Buku Tugas Akhir tanpa perlu *copy-paste* ulang!
