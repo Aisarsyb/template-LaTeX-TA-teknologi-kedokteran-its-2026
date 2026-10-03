@@ -121,7 +121,7 @@ Masukkan referensi sitasi dalam format BibTeX ke dalam berkas [`pustaka/pustaka.
 ### 1. Menggunakan Visual Studio Code (Sangat Disarankan)
 1. Pasang ekstensi **LaTeX Workshop** dari James-Yu.
 2. Buka folder template ini di VS Code.
-3. Buka berkas `main.tex`.
+3. Buka berkas `sempro.tex/buku-ta.tex`.
 4. Tekan `Ctrl + Alt + B` untuk mengompilasi naskah (resep `pdflatex ➞ biber ➞ pdflatex × 2` akan berjalan otomatis).
 5. Tekan `Ctrl + Alt + V` untuk membuka pratinjau PDF.
 
