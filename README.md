@@ -1,163 +1,50 @@
-# Template LaTeX Proposal & Buku Tugas Akhir — Teknologi Kedokteran ITS 2026
+# Skill Tugas Akhir Teknologi Kedokteran ITS
 
-[![GitHub repo](https://img.shields.io/badge/GitHub-Aisarsyb-181717.svg?logo=github)](https://github.com/Aisarsyb/template-LaTeX-TA-teknologi-kedokteran-its-2026)
-[![LaTeX](https://img.shields.io/badge/LaTeX-pdflatex-008080.svg?logo=latex)](https://www.latex-project.org/)
-[![ITS](https://img.shields.io/badge/Institusi-ITS%20Surabaya-003366.svg)](https://www.its.ac.id/)
-[![Departemen](https://img.shields.io/badge/Departemen-Teknologi%20Kedokteran-crimson.svg)](https://www.its.ac.id/)
-[![Fakultas](https://img.shields.io/badge/Fakultas-Kedokteran%20dan%20Kesehatan%20(FKK)-blue.svg)](https://www.its.ac.id/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+Skill AI untuk menyusun proposal dan buku tugas akhir Teknologi Kedokteran ITS dari folder kerja sendiri. Skill menyalin [template LaTeX](./skills/tugas-akhir/template/) setelah pengguna memberi izin, membantu menulis berdasarkan data penelitian, lalu memeriksa hasil kompilasi PDF. Tidak perlu clone repo ini untuk mulai menulis.
 
-Template [LaTeX](https://www.latex-project.org/) resmi dan komprehensif untuk penulisan **Proposal Seminar Proposal (Sempro)** maupun **Buku Tugas Akhir Lengkap (Semhas & Sidang Akhir)** yang telah dikonfigurasi khusus untuk mahasiswa **Departemen Teknologi Kedokteran**, **Fakultas Kedokteran dan Kesehatan (FKK)**, **Institut Teknologi Sepuluh Nopember (ITS) Surabaya** tahun 2026. Format mengacu pada pedoman tugas akhir ITS (*SK Rektor ITS No. 280 Tahun 2022*).
+## Pratinjau template
 
----
+![Contoh sampul proposal dengan data mahasiswa dan judul sementara](./skills/tugas-akhir/template/sampul/preview-proposal.png)
 
-## 🎯 1 Repositori untuk Dua Kebutuhan (Dual-Mode)
+Gambar ini contoh sampul `sempro.tex`, bukan pratinjau langsung naskah pengguna. Judul, identitas, dan pembimbing pada gambar masih berupa data contoh.
 
-Repositori ini dirancang agar mahasiswa tidak perlu berganti tautan atau memindahkan naskah ketika beralih dari fase Sempro ke fase Tugas Akhir:
+## Instalasi
 
-| Tipe Dokumen | File Utama (*Master*) | Cakupan Bab & Halaman |
-| :--- | :--- | :--- |
-| **Proposal Sempro** | [`sempro.tex`](./sempro.tex) *(atau `main.tex`)* | **Bab 1 s.d. Bab 3**, Daftar Pustaka |
-| **Buku Tugas Akhir** | [`buku-ta.tex`](./buku-ta.tex) | **Bab 1 s.d. Bab 5**, Kata Pengantar, Orisinalitas, Biodata Penulis |
+Pasang skill dari fork repo ini melalui [CLI skills](https://github.com/vercel-labs/skills). Perintah berikut memasang skill secara global agar bisa dipakai dari folder kerja mana pun:
 
-> [!TIP]
-> Semua variabel identitas diri (Nama, NRP, Pembimbing, Penguji, Judul) disimpan terpusat di [`pustaka/variables.tex`](./pustaka/variables.tex). Tulisan Bab 1–3 saat Sempro langsung terpakai otomatis di Buku Tugas Akhir tanpa perlu *copy-paste* ulang!
-
----
-
-## ✨ Kepatuhan Terhadap Pedoman Resmi ITS (SK Rektor No. 280/2022)
-
-1. **Preset Lengkap Departemen & Program Studi**:
-   - Program Studi: `Teknologi Kedokteran`
-   - Departemen: `Teknologi Kedokteran`
-   - Fakultas: `Kedokteran dan Kesehatan` (`FKK`)
-   - Kode Mata Kuliah: `KT234801` (Proposal) / `KT234802` (Tugas Akhir)
-2. **Sampul Resmi Terstandar**:
-   - Sempro: Format dasar kertas putih dengan pita biru horizontal khas ITS 10 mm (`sampul-luar-tipis.tex` / Lampiran 1).
-   - Buku TA: Hardcover biru tua ITS (`sampul-luar.tex` / Lampiran 6) dan sampul dalam (`sampul-dalam.tex` / Lampiran 7 & 8).
-3. **Format Judul Bab Sebaris**:
-   - Judul bab dicetak tebal, simetris di tengah (*centered*), sebaris dengan 1 spasi standar (`BAB I PENDAHULUAN`).
-4. **Penomoran Halaman Presisi (Subbab 2.1 & 3.2.f)**:
-   - Nomor halaman Romawi kecil (`ii, iii, ...`) di kanan bawah untuk bagian awal.
-   - Penomoran angka Arab (`1, 2, ...`) di kanan bawah dimulai dari Bab I Pendahuluan sampai akhir naskah.
-5. **Format Caption Gambar & Tabel**:
-   - Penomoran dua bagian (**Gambar 3.1.** / **Tabel 3.1.**) dengan judul tabel di atas dan judul gambar di bawah.
-6. **Manajemen Sitasi Standar APA Edisi ke-7**:
-   - Menggunakan `biblatex` dengan backend `biber` dan format resmi APA 7th edition (`style=apa`).
-7. **Dukungan Lingkungan Kerja Lengkap**:
-   - Siap pakai di **Visual Studio Code** dengan ekstensi *LaTeX Workshop*.
-   - Mendukung kompilasi otomatis melalui **GitHub Actions** CI/CD (`.github/workflows/ci.yaml`) yang mengompilasi kedua versi PDF sekaligus.
-   - Dapat diimpor langsung ke **Overleaf**.
-
----
-
-## 📁 Struktur Direktori
-
-```text
-template-ta-teknologi-kedokteran-its/
-├── .github/workflows/       # Otomasi build GitHub Actions (CI/CD)
-├── .vscode/                 # Konfigurasi ekstensi LaTeX Workshop VS Code
-├── abstrak/                 # Berkas abstrak (Indonesia & Inggris)
-│   ├── abstrak-id.tex
-│   └── abstrak-en.tex
-├── bab/                     # Berkas isi bab naskah
-│   ├── 1-pendahuluan.tex
-│   ├── 2-tinjauan-pustaka.tex
-│   ├── 3-metodologi.tex
-│   ├── 4-pengujian-analisis.tex
-│   └── 5-penutup.tex
-├── gambar/                  # Berkas grafik, diagram, dan foto
-├── lainnya/                 # Lembar pengesahan, kata pengantar, dll.
-│   ├── lembar-pengesahan.tex
-│   └── lembar-pengesahan-en.tex
-├── program/                 # Berkas kode sumber lampiran (Python/C++)
-├── pustaka/                 # Daftar pustaka & konfigurasi variabel
-│   ├── pustaka.bib          # Basis data referensi BibTeX
-│   ├── tanda-hubung.tex     # Penyesuaian pemenggalan kata Indonesia
-│   └── variables.tex        # DATA PRIBADI (Nama, NRP, Dosen, Judul)
-├── sampul/                  # Halaman sampul luar & dalam
-├── .gitignore               # Mengabaikan berkas build (*.aux, *.log, *.pdf, dll)
-├── LICENSE                  # Lisensi MIT
-├── sempro.tex               # Berkas utama PROPOSAL SEMINAR PROPOSAL (Bab 1-3)
-├── buku-ta.tex              # Berkas utama BUKU TUGAS AKHIR LENGKAP (Bab 1-5)
-├── main.tex                 # Berkas default (kompatibel Overleaf / default viewer)
-└── README.md                # Dokumentasi petunjuk penggunaan
-```
-
----
-
-## 🚀 Panduan Penggunaan Cepat
-
-### Langkah 1: Kloning Repositori
 ```bash
-git clone https://github.com/Aisarsyb/template-LaTeX-TA-teknologi-kedokteran-its-2026.git
-cd template-LaTeX-TA-teknologi-kedokteran-its-2026
+bunx skills add nashirabbash/template-LaTeX-TA-teknologi-kedokteran-its-2026 --skill tugas-akhir -g
 ```
 
-### Langkah 2: Sesuaikan Variabel Dokumen
-Buka berkas [`pustaka/variables.tex`](./pustaka/variables.tex) dan ubah data berikut sesuai data Anda:
-- `\name{...}`: Nama lengkap mahasiswa
-- `\nrp{...}`: Nomor Pokok Mahasiswa (NRP)
-- `\advisor{...}` & `\advisornip{...}`: Nama dan NIP Dosen Pembimbing Utama
-- `\coadvisor{...}` & `\coadvisornip{...}`: Nama dan NIP Dosen Pembimbing Kedua
-- `\tatitle{...}`: Judul naskah dalam Bahasa Indonesia
-- `\engtatitle{...}`: Judul naskah dalam Bahasa Inggris
+Tanpa `-g`, skill hanya dipasang untuk proyek saat ini. Instalasi tidak langsung mengisi folder kerja; agent menyalin template hanya ketika diminta dan setelah mendapat izin. Untuk menghasilkan PDF, komputer juga perlu distribusi TeX yang menyediakan `latexmk`, `xelatex`, `fontspec`, `biber`, `biblatex-apa`, dan `txfonts`. Berkas Times New Roman untuk isi dan Trebuchet MS untuk sampul sudah tersedia dalam folder `fonts/` proyek.
 
-### Langkah 3: Menulis Isi Naskah
-Tuliskan isi naskah Anda pada berkas-berkas di folder [`bab/`](./bab/):
-- **Bab I**: Latar Belakang, Rumusan Masalah, Batasan Masalah, Tujuan, Manfaat, Sistematika Penulisan.
-- **Bab II**: Tinjauan Pustaka, Penelitian Terdahulu, Dasar Teori.
-- **Bab III**: Diagram Alir Penelitian, Perancangan Sistem / Alat, Protokol Pengujian.
-- **Bab IV**: Hasil Pengujian dan Analisis.
-- **Bab V**: Kesimpulan dan Saran.
+## Contoh pemakaian
 
-### Langkah 4: Menambahkan Referensi
-Masukkan referensi sitasi dalam format BibTeX ke dalam berkas [`pustaka/pustaka.bib`](./pustaka/pustaka.bib). Sitasi di naskah menggunakan perintah `\textcite{kunci_sitasi}` atau `\parencite{kunci_sitasi}`.
+Buka folder kerja kosong di agent yang mendukung pemanggilan skill dengan garis miring, lalu ketik:
 
----
+> /tugas-akhir Buat proyek TA di folder ini.
 
-## 🛠️ Cara Kompilasi Dokumen
+Agent menunjukkan lokasi tujuan dan meminta izin sebelum menyalin berkas. Jika folder kerja sudah berisi berkas lain, pilih subfolder baru yang kosong agar tidak ada berkas tertimpa. Setelah proyek dibuat, isi data penelitian dan sumbernya, lalu minta bantuan sesuai tahap:
 
-### 1. Menggunakan Visual Studio Code (Sangat Disarankan)
-1. Pasang ekstensi **LaTeX Workshop** dari James-Yu.
-2. Buka folder template ini di VS Code.
-3. Buka berkas `sempro.tex/buku-ta.tex`.
-4. Tekan `Ctrl + Alt + B` untuk mengompilasi naskah (resep `pdflatex ➞ biber ➞ pdflatex × 2` akan berjalan otomatis).
-5. Tekan `Ctrl + Alt + V` untuk membuka pratinjau PDF.
+> /tugas-akhir Tulis Bab 1 proposal berdasarkan data penelitian di bab/ dan sumber di pustaka/pustaka.bib. Tandai informasi yang belum tersedia.
 
-### 2. Menggunakan Terminal / CLI
-Jalankan perintah berikut di dalam direktori proyek:
+> /tugas-akhir Tulis Bab 4 buku TA berdasarkan hasil pengujian yang sudah saya masukkan ke proyek. Bedakan hasil teknis dari manfaat klinis yang belum diuji.
+
+> /tugas-akhir Audit Bab 1 dan Bab 3 terhadap panduan penulisan serta data dan sumber yang tersedia. Laporkan temuan saja, jangan ubah naskah.
+
+> /tugas-akhir Periksa PDF proposal saya.
+
+Saat menulis Bab 1–5, skill memakai [panduan sesuai bab](./skills/tugas-akhir/references/). Setelah menulis atau mengedit naskah, dua subagent baca-saja memeriksa sistematika dan dukungan bukti secara terpisah. Audit atau review tanpa permintaan edit hanya menghasilkan temuan. Sesudah mengedit berkas LaTeX, agent membangun PDF dokumen target dan melaporkan hasil serta lokasinya. Bila berkas bersama berubah tanpa target yang disebut, agent membangun kedua dokumen. Skill tidak membuka PDF secara otomatis.
+
+Proyek hasil salinan memuat `sempro.tex` (proposal Bab 1–3), `buku-ta.tex` (buku Bab 1–5), serta `main.tex` (alternatif proposal). Bab 1–3 dipakai bersama sehingga perubahan di sana memengaruhi kedua dokumen. Isi identitas dan pembimbing di `pustaka/variables.tex`, naskah di `bab/` dan `abstrak/`, serta sumber sitasi di `pustaka/pustaka.bib`. Ganti seluruh data contoh; periksa tulisan AI terhadap data penelitian, sumber asli, ketentuan resmi prodi, dan arahan pembimbing sebelum menyerahkan naskah.
+
+## Bangun PDF secara manual
+
+Dari folder proyek hasil salinan, jalankan perintah berikut bila ingin membangun PDF tanpa agent:
+
 ```bash
-pdflatex main.tex
-biber main
-pdflatex main.tex
-pdflatex main.tex
+latexmk -xelatex -halt-on-error sempro.tex
+latexmk -xelatex -halt-on-error buku-ta.tex
 ```
 
-### 3. Menggunakan Overleaf
-1. Unduh seluruh folder repositori ini sebagai berkas `.zip`.
-2. Buka [Overleaf](https://www.overleaf.com/) dan pilih **New Project** > **Upload Project**.
-3. Pastikan pengaturan *Compiler* diatur ke **pdfLaTeX** dan *TeX Live version* terbaru.
-
----
-
-## 💡 Tips & Panduan Penulisan
-
-- **Menyisipkan Gambar**:
-  Gunakan penentu posisi `[H]` agar posisi gambar tidak berpindah mendahului subbab berikutnya:
-  ```latex
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{gambar/nama-gambar.png}
-    \caption{Keterangan Gambar Anda}
-    \label{fig:labelgambar}
-  \end{figure}
-  ```
-- **Istilah Asing**: Gunakan perintah `\emph{istilah}` untuk memformat teks miring (*italic*).
-- **Tanda Hubung Dokter–Pasien**: Gunakan `dokter--pasien` (dua strip) untuk tanda pisah en-dash yang rapi.
-
----
-
-## 📄 Lisensi
-
-Berkas template ini dilisensikan di bawah [MIT License](./LICENSE). Silakan gunakan, bagikan, dan kembangkan untuk kebutuhan akademik mahasiswa Departemen Teknologi Kedokteran ITS.
+Teks isi memakai Times New Roman; sampul memakai Trebuchet MS. Kedua font dibaca langsung dari berkas `.ttf` di folder `fonts/`, sehingga pengguna tidak perlu memasang font pada sistem. Hak cipta font tetap milik pemegang hak masing-masing; baca [EULA font](./skills/tugas-akhir/template/fonts/corefonts-eula.html). Di Overleaf, unggah seluruh isi proyek dan pilih XeLaTeX. Jika `latexmk` belum tersedia, jalankan `xelatex -halt-on-error sempro.tex`, `biber sempro`, lalu `xelatex -halt-on-error sempro.tex` dua kali; ganti `sempro` dengan `buku-ta` untuk buku. Perubahan format template tercatat di [CHANGELOG.md](./CHANGELOG.md). Lisensi kode: [MIT](./LICENSE); font tunduk pada EULA Microsoft Core Fonts.

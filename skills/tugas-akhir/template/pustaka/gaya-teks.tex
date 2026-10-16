@@ -1,0 +1,90 @@
+\usepackage{fontspec}
+\setmainfont[
+  Path=fonts/,
+  UprightFont=Times.TTF,
+  BoldFont=Timesbd.TTF,
+  ItalicFont=Timesi.TTF,
+  BoldItalicFont=Timesbi.TTF
+]{Times New Roman}
+\newfontfamily\coverfont[
+  Path=fonts/,
+  UprightFont=trebuc.ttf,
+  BoldFont=Trebucbd.ttf,
+  ItalicFont=trebucit.ttf,
+  BoldItalicFont=trebucbi.ttf
+]{Trebuchet MS}
+
+% Heading 1--4: bab, subbab, anak subbab, dan subanak subbab.
+\usepackage{titlesec}
+\titleformat{\chapter}[block]{\bfseries\fontsize{14}{17}\selectfont\centering}{BAB \Roman{chapter}\ }{0pt}{\MakeUppercase}
+\titleformat{\section}{\bfseries\fontsize{13}{16}\selectfont}{\MakeUppercase{\thesection}}{1ex}{}
+\titleformat{\subsection}{\bfseries\fontsize{12}{15}\selectfont}{\MakeUppercase{\thesubsection}}{1ex}{}
+\titleformat{\subsubsection}{\bfseries\fontsize{12}{15}\selectfont}{\MakeUppercase{\thesubsubsection}}{1ex}{}
+\titlespacing{\chapter}{0ex}{0ex}{0ex}
+\titlespacing{\section}{0ex}{1ex}{0ex}
+\titlespacing{\subsection}{0ex}{0.5ex}{0ex}
+\titlespacing{\subsubsection}{0ex}{0.5ex}{0ex}
+
+% Paragraf isi: 12 pt normal, inden baris pertama, rata kiri-kanan, jarak akhir 1ex.
+\newcommand{\paragraphtextstyle}{%
+  \normalfont\rmfamily\fontsize{12}{15}\selectfont
+  \setlength{\parindent}{2em}%
+  \setlength{\parskip}{1ex}%
+}
+
+% List: rapat antarbutir, jarak 1ex dari paragraf sebelumnya, jarak setelah daftar tetap ada.
+\newcommand{\listtextstyle}{%
+  \setlist{itemsep=0pt,parsep=0pt,topsep=0pt,partopsep=0pt,%
+    after=\vspace{\parskip}}%
+}
+\listtextstyle
+
+% Isi daftar awal: 11 pt Times New Roman, reguler, dengan titik penghubung ke nomor halaman.
+\usepackage[titles]{tocloft}
+\renewcommand{\cftchapfont}{\normalfont}
+\renewcommand{\cftchappagefont}{\normalfont}
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+\renewcommand{\cftfigfont}{\normalfont}
+\renewcommand{\cftfigpagefont}{\normalfont}
+\renewcommand{\cfttabfont}{\normalfont}
+\renewcommand{\cfttabpagefont}{\normalfont}
+\renewcommand{\cftchappresnum}{BAB~}
+\setlength{\cftchapnumwidth}{4em}
+\setlength{\cftbeforechapskip}{1ex}
+\setlength{\cftbeforesecskip}{1ex}
+\setlength{\cftbeforesubsecskip}{1ex}
+\setlength{\cftbeforesubsubsecskip}{1ex}
+\setlength{\cftbeforefigskip}{1ex}
+\setlength{\cftbeforetabskip}{1ex}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftfigleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cfttableader}{\cftdotfill{\cftdotsep}}
+
+% Gambar dan Tabel: 10 pt reguler, rata tengah, dengan jarak setelah caption.
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\tablename}{Tabel}
+\makeatletter
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{1ex}
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \begingroup
+  \fontsize{10}{12}\selectfont
+  \sbox\@tempboxa{#1. #2}%
+  \ifdim \wd\@tempboxa >\hsize
+    \centering #1. #2\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \endgroup
+  \vskip\belowcaptionskip}
+\makeatother

@@ -16,18 +16,20 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: sempro.tex
+          working_directory: skills/tugas-akhir/template
 
       - name: Compile Buku TA
         uses: xu-cheng/latex-action@v3
         with:
           root_file: buku-ta.tex
+          working_directory: skills/tugas-akhir/template
 
       - name: Prepare artifacts
         run: |
           mkdir -p dist
-          cp sempro.pdf dist/sempro.pdf
-          cp buku-ta.pdf dist/buku-ta.pdf
-          cp sempro.pdf dist/main.pdf
+          cp skills/tugas-akhir/template/sempro.pdf dist/sempro.pdf
+          cp skills/tugas-akhir/template/buku-ta.pdf dist/buku-ta.pdf
+          cp skills/tugas-akhir/template/sempro.pdf dist/main.pdf
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
